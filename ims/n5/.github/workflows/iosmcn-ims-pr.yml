@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2024 Intel Corporation
+
+name: IOSMCN-IMS PR Workflow
+
+on:
+  pull_request:
+    branches:
+      - iosmcnmaster
+  push:
+    branches:
+      - iosmcnmaster
+  workflow_dispatch:
+
+jobs:
+  docker-build:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    
+
+    env:
+      REGISTRY: ghcr.io
+      DOCKER_REPOSITORY: ${{ github.repository_owner }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        env:
+          DOCKER_TAG: master_latest
+        run: |
+          docker build -t ${{ env.REGISTRY }}/${{ env.DOCKER_REPOSITORY }}:$DOCKER_TAG .

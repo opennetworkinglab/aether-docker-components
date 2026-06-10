@@ -1,0 +1,17 @@
+$TTL 1h
+@ IN SOA ns.e164.arpa. root.e164.arpa. (
+                                                        2009010918 ;serial
+                                                        3600 ;refresh
+                                                        3600 ;retry
+                                                        3600 ;expire
+                                                        3600 ;minimum TTL
+)
+@ IN NS e164.arpa.
+@ IN A DNS_IP
+
+; Wildcard to match any tel:+xxxx and change to sip:xxxx@IMS_DOMAIN
+* IN NAPTR 10 100 "u" "E2U+sip" "!(^.*$)!sip:\\1@IMS_DOMAIN!" .
+; Record to route calls starting with DE +49 to IBCF :
+;*.9.4 IN NAPTR 20 100 "u" "E2U+sip" "!(^.*$)!sip:\\1@ibcf.IMS_DOMAIN!" .
+; Add more country codes to route over IBCF using the same format as below. You may need also to adjust the dialplan in Asterisk, e.g. for UK +44:
+; *.4.4 IN NAPTR 20 100 "u" "E2U+sip" "!(^.*$)!sip:\\1@ibcf.IMS_DOMAIN!" .

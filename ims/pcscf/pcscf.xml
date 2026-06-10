@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DiameterPeer 
+	FQDN="pcscf.IMS_DOMAIN"
+	Realm="IMS_DOMAIN"
+	Vendor_Id="10415"
+	Product_Name="CDiameterPeer"
+	AcceptUnknownPeers="1"
+	DropUnknownOnDisconnect="1"
+	Tc="30"
+	Workers="4"
+	QueueLength="8"
+	TransactionTimeout="5"
+	SessionsHashSize="128"
+	DefaultAuthSessionTimeout="REGISTRATION_EXPIRES_ENV"
+	MaxAuthSessionTimeout="REGISTRATION_EXPIRES_ENV"
+>
+	<Peer FQDN="pcrf.EPC_DOMAIN" Realm="EPC_DOMAIN" port="PCRF_BIND_PORT"/> 
+
+	<Acceptor port="PCSCF_BIND_PORT" bind="PCSCF_IP"/>
+
+	<Auth id="16777236" vendor="10415"/> <!-- 3GPP Rx -->
+	<Auth id="16777236" vendor="0"/> <!-- 3GPP Rx -->
+
+	<DefaultRoute FQDN="pcrf.EPC_DOMAIN" metric="10"/>
+
+</DiameterPeer>

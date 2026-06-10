@@ -1,0 +1,35 @@
+{
+  "nfInstanceId": "##{UUID}",
+  "nfType": "AF",
+  "nfStatus": "REGISTERED",
+  "ipv4Addresses": ["##{AFIP}"],
+  "allowedNfTypes": ["SCP", "PCF"],
+  "priority": 0,
+  "capacity": 100,
+  "load": 0,
+  "nfServiceList": {
+    "##{UUID}": {
+      "serviceInstanceId": "##{UUID}",
+      "serviceName": "npcf-policyauthorization",
+      "versions": [
+        {
+          "apiVersionInUri": "v2",
+          "apiFullVersion": "2.0.0"
+        }
+      ],
+      "scheme": "http",
+      "nfServiceStatus": "REGISTERED",
+      "ipEndPoints": [
+        {
+          "ipv4Address": "##{AFIP}",
+          "port": 7777
+        }
+      ],
+      "allowedNfTypes": ["PCF"],
+      "priority": 0,
+      "capacity": 100,
+      "load": 0
+    }
+  },
+  "nfProfileChangesSupportInd": true
+}

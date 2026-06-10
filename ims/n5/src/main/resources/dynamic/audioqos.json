@@ -1,0 +1,49 @@
+{
+  "ascReqData": {
+    "afAppId": "+g.3gpp.icsi-ref=\"urn%3Aurn-7%3A3gpp-service.ims.icsi.mmtel\"",
+    "dnn": "ims",
+    "medComponents": {
+      "0": {
+        "medCompN": 1,
+        "qosReference": "qosVoNR",
+        "medType": "AUDIO",
+        "codecs": ["downlink\noffer\n", "uplink\nanswer\n"],
+        "medSubComps": {
+          "0":{
+            "fNum": 1,
+            "fDescs": [
+              "permit out 17 from any to ##{UEIP} ##{UEAUDIOPORT}",
+              "permit in 17 from ##{UEIP} ##{UEAUDIOPORT} to any"
+            ],
+            "fStatus": "ENABLED",
+            "marBwDl": "128 Kbps",
+            "marBwUl": "128 Kbps",
+            "flowUsage": "NO_INFO"
+          },
+          "1": {
+            "fNum": 2,
+            "fDescs": [
+              "permit out 17 from any to ##{UEIP} ##{UERTCPPORT}",
+              "permit in 17 from ##{UEIP} ##{UERTCPPORT} to any"
+            ],
+            "fStatus": "ENABLED",
+            "marBwDl": "128 Kbps",
+            "marBwUl": "128 Kbps",
+            "flowUsage": "RTCP"
+          }
+        }
+      }
+    },
+    "evSubsc": {
+      "events": [
+        { "event": "QOS_NOTIF", "notifMethod": "PERIODIC" },
+        { "event": "ANI_REPORT", "notifMethod": "ONE_TIME" }
+      ]
+    },
+    "notifUri": "http://##{AFIP}:##{AFPORT}",
+    "sponStatus": "SPONSOR_DISABLED",
+    "gpsi": "msisdn-##{UEMSISDN}",
+    "suppFeat": "5",
+    "ueIpv4": "##{UEIP}"
+  }
+}

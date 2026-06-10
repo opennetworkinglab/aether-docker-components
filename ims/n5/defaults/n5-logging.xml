@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+    <Appenders>
+        <Syslog name="Syslog" host="127.0.0.1" format="RFC5424" port="514" protocol="UDP" appName="N5-Interface" facility="LOCAL0">
+        </Syslog>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <RollingFile name="RollingFile"
+                        fileName="/var/log/n5/n5.log"
+                        filePattern="/var/log/n5/n5.%i.log.gz">
+                        <PatternLayout>
+                                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                                </pattern>
+                        </PatternLayout>
+                        <Policies>
+                                <SizeBasedTriggeringPolicy size="10MB" />
+                        </Policies>
+                        <DefaultRolloverStrategy max="5" />
+                </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="Console" level="info"/>
+            <AppenderRef ref="RollingFile" level="info"/>
+        </Root>
+    </Loggers>
+</Configuration>

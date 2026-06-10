@@ -1,0 +1,9 @@
+[N5-MAPPING]
+SCP-IP=127.0.0.200                    //IP Address of SCP HTTP2 SBI Interface in 5G Core 
+SCP-PORT=7777                           //Port of SCP HTTP2 SBI Interface in 5G Core
+PCF-IP=127.0.0.13                    //IP Address of PCF HTTP2 SBI Interface in 5G Core
+PCF-PORT=7777                           //Port of PCF HTTP2 SBI Interface in 5G Core
+AF-BIND-IP=127.0.0.201                //IP Address of N5-Interface HTTP2 SBI Interface
+AF-BIND-PORT=7777                       //Port of N5-Interface HTTP2 SBI Interface in 5G Core
+AF-BIND-SBI-IP=127.0.0.201            //IP Address of N5-Interface SBI HTTP Interface where IMS will Request For QoS
+AF-BIND-SBI-PORT=7782                   //Port of N5-Interface SBI HTTP Interface where IMS will Request For QoS
