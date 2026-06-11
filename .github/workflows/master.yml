@@ -1,0 +1,67 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2024 Intel Corporation
+
+name: Master workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  hadolint-gnb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Dockerfile linter
+        uses: hadolint/hadolint-action@v3.3.0
+        # For now, ignoring:
+        # DL3008 warning: Pin versions in apt get install (e.g., apt-get install <package>=<version>);
+        # DL4006 warning: Set the SHELL option -o pipefail before RUN with a pipe in it; and
+        # SC2034 warning: SPLIT appears unused
+        with:
+          dockerfile: Dockerfile-gnb
+          ignore: DL3008,DL4006,SC2034
+
+  hadolint-ocudu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Dockerfile linter
+        uses: hadolint/hadolint-action@v3.3.0
+        # For now, ignoring:
+        # DL3008 warning: Pin versions in apt get install (e.g., apt-get install <package>=<version>)
+        with:
+          dockerfile: Dockerfile-ocudu
+          ignore: DL3008
+
+  hadolint-ue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Dockerfile linter
+        uses: hadolint/hadolint-action@v3.3.0
+        # For now, ignoring:
+        # DL3008 warning: Pin versions in apt get install (e.g., apt-get install <package>=<version>)
+        with:
+          dockerfile: Dockerfile-ue
+          ignore: DL3008
+
+  hadolint-ueransim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Dockerfile linter
+        uses: hadolint/hadolint-action@v3.3.0
+        # For now, ignoring:
+        # DL3008 warning: Pin versions in apt get install (e.g., apt-get install <package>=<version>)
+        with:
+          dockerfile: Dockerfile-ueransim
+          ignore: DL3008
