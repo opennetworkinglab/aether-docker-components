@@ -28,7 +28,7 @@ ARG MARCH=native
 ARG NUM_JOBS=""
 ARG COMPILER=gcc
 ARG EXTRA_CMAKE_ARGS="-DENABLE_EXPORT=On -DENABLE_ZEROMQ=On"
-ARG FORCE_MIN_POOL_WORKERS=""
+ARG FORCE_MIN_POOL_WORKERS="4"
 
 ####################################
 # Stage 1a: Base build environment #
