@@ -64,4 +64,3 @@ docker-push:
                 esac; \
                 docker push $$_IMAGE_NAME; \
         done
-

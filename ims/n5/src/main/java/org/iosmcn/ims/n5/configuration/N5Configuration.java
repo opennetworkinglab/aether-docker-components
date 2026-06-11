@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
  */
 @Configuration
 public class N5Configuration {
-    
+
     // Logger for recording configuration loading status and errors.
     private final static Logger logger = LogManager.getLogger(N5Configuration.class);
 
@@ -35,7 +35,7 @@ public class N5Configuration {
     // Path to the configuration file, with a default fallback.
     @Value("${app.config}")
     private String configFilePath;
-    
+
     /**
      * Loads configuration settings from the specified INI file.
      * This method is executed after the Spring context is initialized.

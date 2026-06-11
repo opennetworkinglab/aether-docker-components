@@ -1,5 +1,5 @@
 [N5-MAPPING]
-SCP-IP=127.0.0.200                    //IP Address of SCP HTTP2 SBI Interface in 5G Core 
+SCP-IP=127.0.0.200                    //IP Address of SCP HTTP2 SBI Interface in 5G Core
 SCP-PORT=7777                           //Port of SCP HTTP2 SBI Interface in 5G Core
 PCF-IP=127.0.0.13                    //IP Address of PCF HTTP2 SBI Interface in 5G Core
 PCF-PORT=7777                           //Port of PCF HTTP2 SBI Interface in 5G Core

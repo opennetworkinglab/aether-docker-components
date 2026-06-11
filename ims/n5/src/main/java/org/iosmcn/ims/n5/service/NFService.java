@@ -567,7 +567,7 @@ public class NFService {
                         .build();
 
                 OkHttpClient client = getSbiClient();
-                
+
                 // Execute the request and handle response.
                 try (Response response = client.newCall(request).execute()) {
                     // Log success or failure based on response code.

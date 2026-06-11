@@ -57,4 +57,3 @@ EXPOSE 8080
 
 # Define the entrypoint to run the JAR file
 CMD ["java", "-jar", "target/n5-0.4.0.jar"]
-

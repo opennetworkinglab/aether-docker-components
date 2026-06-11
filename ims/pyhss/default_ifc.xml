@@ -116,7 +116,7 @@
                       <Header>Recv-Info</Header>
                       <Content>"g.3gpp.ussd"</Content>
                     </SIPHeader>
-                </SPT>                
+                </SPT>
             </TriggerPoint>
             <ApplicationServer>
                 <ServerName>sip:ussd.ims.mnc{{ iFC_vars['mnc'] }}.mcc{{ iFC_vars['mcc'] }}.3gppnetwork.org:5060</ServerName>
@@ -138,7 +138,7 @@
                 <SPT>
                     <Group>0</Group>
                     <SessionCase>0</SessionCase>
-                </SPT>             
+                </SPT>
             </TriggerPoint>
             <ApplicationServer>
                 <ServerName>sip:applicationserver.ims.mnc{{ iFC_vars['mnc'] }}.mcc{{ iFC_vars['mcc'] }}.3gppnetwork.org</ServerName>
@@ -161,7 +161,7 @@
                 <SPT>
                     <Group>0</Group>
                     <SessionCase>2</SessionCase>
-                </SPT>           
+                </SPT>
             </TriggerPoint>
             <ApplicationServer>
                 <ServerName>sip:voicemail.mnc{{ iFC_vars['mnc'] }}.mcc{{ iFC_vars['mcc'] }}.3gppnetwork.org:5060</ServerName>

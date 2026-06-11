@@ -28,7 +28,7 @@ public class OkHttpClientConfiguration {
     @Bean("okHttpClient")
     public OkHttpClient okHttpClient() {
         ConnectionPool connectionPool = new ConnectionPool(5, 5, TimeUnit.MINUTES);
-        
+
         return new OkHttpClient.Builder()
                 .protocols(Arrays.asList(Protocol.HTTP_2, Protocol.HTTP_1_1))
                 .connectionPool(connectionPool)

@@ -17,7 +17,7 @@
             <AgeOfLocationInformation>0</AgeOfLocationInformation>
             <Extension>
                 <VisitedPLMNID></VisitedPLMNID>
-            </Extension>{% endif %}          
+            </Extension>{% endif %}
         </EPSLocationInformation>
     </Extension>
 

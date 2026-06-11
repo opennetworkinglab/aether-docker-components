@@ -33,7 +33,7 @@ class N5ControllerTests {
     @SuppressWarnings("unchecked")
     @Test
     public void testCreatePDUAudioApiReachable() throws Exception {
-        when(nfService.createPDUAudio(any(Map.class))).thenReturn("Mock PDU Audio Created"); 
+        when(nfService.createPDUAudio(any(Map.class))).thenReturn("Mock PDU Audio Created");
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/nf/createPDUAudio")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -44,7 +44,7 @@ class N5ControllerTests {
     @SuppressWarnings("unchecked")
     @Test
     public void testCreatePDUVideoApiReachable() throws Exception {
-        when(nfService.createPDUVideo(any(Map.class))).thenReturn("Mock PDU Video Created"); 
+        when(nfService.createPDUVideo(any(Map.class))).thenReturn("Mock PDU Video Created");
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/nf/createPDUVideo")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -55,7 +55,7 @@ class N5ControllerTests {
     @SuppressWarnings("unchecked")
     @Test
     public void testDeletePDUApiReachable() throws Exception {
-        when(nfService.deletePDU(any(Map.class))).thenReturn("Mock PDU Deleted"); 
+        when(nfService.deletePDU(any(Map.class))).thenReturn("Mock PDU Deleted");
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/nf/deletePDU")
                 .contentType(MediaType.APPLICATION_JSON)

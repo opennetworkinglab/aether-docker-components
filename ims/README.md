@@ -10,7 +10,7 @@ Docker host machine
 
 - Ubuntu 22.04 or above
 
-Over-The-Air setups: 
+Over-The-Air setups:
 
 - OCUDU Project gNB using Ettus USRP x310
 
@@ -62,7 +62,7 @@ Edit only the following parameters in **aether-ims-n5** as per your setup
 ```
 SCP-IP=10.206.1.30             --> aether SD-Core nrf EXTERNAL-IP (kubectl get svc -n aether-5gc)
 SCP-PORT=29510                 --> aether SD-Core nrf PORT
-PCF-IP=10.206.1.30             --> aether SD-Core pcf EXTERNAL-IP 
+PCF-IP=10.206.1.30             --> aether SD-Core pcf EXTERNAL-IP
 PCF-PORT=29507                 --> aether SD-Core pcf PORT
 AF-BIND-IP=10.206.1.100        --> same as IMS_IP configured above
 AF-BIND-PORT=7783

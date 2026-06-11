@@ -57,28 +57,28 @@ Log4j2 is used for logging the default configuration is available in `defaults/n
 Default running parameters are available in `defaults/aether-ims-n5`
 
 #### IP Address of SCP HTTP2 SBI Interface in 5G Core
-SCP-IP=127.0.0.200                     
+SCP-IP=127.0.0.200  
 
 #### Port of SCP HTTP2 SBI Interface in 5G Core
-SCP-PORT=7777                           
+SCP-PORT=7777  
 
 #### IP Address of PCF HTTP2 SBI Interface in 5G Core
-PCF-IP=127.0.0.13                    
+PCF-IP=127.0.0.13  
 
 #### Port of PCF HTTP2 SBI Interface in 5G Core
-PCF-PORT=7777                           
+PCF-PORT=7777  
 
 #### IP Address of N5-Interface HTTP2 SBI Interface
-AF-BIND-IP=127.0.0.201                
+AF-BIND-IP=127.0.0.201  
 
 #### Port of N5-Interface HTTP2 SBI Interface in 5G Core
-AF-BIND-PORT=7777                       
+AF-BIND-PORT=7777  
 
 ## Docker
 
 ### Build
 
-From source code folder run 
+From source code folder run
 
 docker build -t n5-service .
 
@@ -121,4 +121,3 @@ docker exec -it n5-container /bin/bash
 
 ## Acknowledgments
 Special thanks to the **3GPP community** and **Spring Boot ecosystem** for making this possible.
-
