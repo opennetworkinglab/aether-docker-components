@@ -29,11 +29,11 @@ DOCKER_LABEL_BUILD_DATE  ?= $(shell date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 ## Upstream source refs (must match Dockerfile ARG defaults)
 SRSRAN_GNB_REF           ?= release_25_10
-SRSRAN_UE_REF            ?= release_23_11
-OCUDU_REF                ?= release_26_04
-UERANSIM_REF             ?= v3.2.7
+SRSRAN_UE_REF                     ?= release_23_11
+OCUDU_REF                         ?= release_26_04
+UERANSIM_REF                      ?= v3.2.7
 SRSRAN_GNB_FORCE_MIN_POOL_WORKERS ?= 4
-OCUDU_FORCE_MIN_POOL_WORKERS ?= 4
+OCUDU_FORCE_MIN_POOL_WORKERS      ?= 4
 
 SRSRAN_GNB_REPO          ?= https://github.com/srsran/srsRAN_Project.git
 SRSRAN_UE_REPO           ?= https://github.com/srsran/srsRAN_4G.git
