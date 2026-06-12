@@ -2,9 +2,11 @@
 ################
 # OS_VERSION            Ubuntu OS version
 # SRSRAN_REF            Git ref to build
+# MARCH                 gcc/clang compatible arch
 
 ARG OS_VERSION=22.04
 ARG SRSRAN_REF=release_23_11
+ARG MARCH=x86-64-v2
 
 ##################
 # Stage 1: Build #
@@ -38,7 +40,8 @@ RUN git clone --depth 1 --branch ${SRSRAN_REF} https://github.com/srsran/srsRAN_
 
 WORKDIR /src/build
 
-RUN cmake ../
+ARG MARCH
+RUN cmake -DCMAKE_C_FLAGS="-march=${MARCH}" -DCMAKE_CXX_FLAGS="-march=${MARCH}" ../
 RUN make -j"$(nproc)"
 RUN make install
 
