@@ -15,7 +15,7 @@ jobs:
   hadolint-gnb:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Dockerfile linter
         uses: hadolint/hadolint-action@v3.3.0
@@ -30,7 +30,7 @@ jobs:
   hadolint-ocudu:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Dockerfile linter
         uses: hadolint/hadolint-action@v3.3.0
@@ -43,7 +43,7 @@ jobs:
   hadolint-ue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Dockerfile linter
         uses: hadolint/hadolint-action@v3.3.0
@@ -56,7 +56,7 @@ jobs:
   hadolint-ueransim:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Dockerfile linter
         uses: hadolint/hadolint-action@v3.3.0
