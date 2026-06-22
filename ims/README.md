@@ -23,7 +23,8 @@ Over-The-Air setups:
 You can either pull the pre-built docker images or build them from the source.
 
 ### Get Pre-built Docker images
-TODO: Update procedure to use pre-built images
+
+Required IMS images are already built and updated in sa-vonr-ims-deploy.yaml. Use this file to deploy IMS using pre-built images
 
 ### Build Docker images from source
 
@@ -82,7 +83,8 @@ source .env
 docker compose -f sa-vonr-ims-deploy.yaml up
 ```
 
-NOTE: If IMS deployed on separate server than 5GC, add below route in IMS server (IMS UE SUBNET is assumed as 192.168.200.0/24),
+NOTE 1: Use sa-vonr-ims-deploy-local-img.yaml file to use locally built IMS images
+NOTE 2: If IMS deployed on separate server than 5GC, add below route in IMS server (IMS UE SUBNET is assumed as 192.168.200.0/24),
 ```
 sudo ip route add 192.168.200.0/24 via <DATA_IFACE IP OF UPF>
 ```

@@ -1,6 +1,7 @@
 services:
   n5:
-    image: aetherproject/ims-n5:rel-1.0.0
+    build: ./n5
+    image: docker_n5
     container_name: n5
     env_file:
       - .env
@@ -11,7 +12,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     network_mode: host
   dns:
-    image: aetherproject/ims-dns:rel-1.0.0
+    build: ./dns
+    image: docker_dns
     container_name: dns
     env_file:
       - .env
@@ -25,7 +27,8 @@ services:
       default:
         ipv4_address: ${DNS_IP}
   rtpengine:
-    image: aetherproject/ims-rtpengine:rel-1.0.0
+    build: ./rtpengine
+    image: docker_rtpengine
     container_name: rtpengine
     privileged: true
     env_file:
@@ -50,7 +53,8 @@ services:
       # - "49000-50000/udp"
     network_mode: host
   mysql:
-    image: aetherproject/ims-mysql:rel-1.0.0
+    build: ./mysql
+    image: docker_mysql
     container_name: mysql
     env_file:
       - .env
@@ -64,7 +68,8 @@ services:
       default:
         ipv4_address: ${MYSQL_IP}
   pyhss:
-    image: aetherproject/ims-pyhss:rel-1.0.0
+    build: ./pyhss
+    image: docker_pyhss
     container_name: pyhss
     dns: ${DNS_IP}
     volumes:
@@ -87,7 +92,7 @@ services:
       default:
         ipv4_address: ${PYHSS_IP}
   icscf:
-    image: aetherproject/ims-kamailio:rel-1.0.0
+    image: docker_kamailio
     container_name: icscf
     dns: ${DNS_IP}
     volumes:
@@ -111,7 +116,7 @@ services:
       default:
         ipv4_address: ${ICSCF_IP}
   scscf:
-    image: aetherproject/ims-kamailio:rel-1.0.0
+    image: docker_kamailio
     container_name: scscf
     dns: ${DNS_IP}
     volumes:
@@ -135,7 +140,7 @@ services:
       default:
         ipv4_address: ${SCSCF_IP}
   pcscf:
-    image: aetherproject/ims-kamailio:rel-1.0.0
+    image: docker_kamailio
     container_name: pcscf
     dns: ${DNS_IP}
     privileged: true
@@ -167,7 +172,7 @@ services:
       # - "6100-6120/udp"
     network_mode: host
   smsc:
-    image: aetherproject/ims-kamailio:rel-1.0.0
+    image: docker_kamailio
     container_name: smsc
     dns: ${DNS_IP}
     volumes:
