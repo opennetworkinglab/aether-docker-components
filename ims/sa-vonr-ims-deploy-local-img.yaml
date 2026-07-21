@@ -33,6 +33,8 @@ services:
     privileged: true
     env_file:
       - .env
+    extra_hosts:
+      - "rtpengine-cli:${RTPENGINE_IP}"
     volumes:
       - ./rtpengine:/mnt/rtpengine
       - /etc/timezone:/etc/timezone:ro
